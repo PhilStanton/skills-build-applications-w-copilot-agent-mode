@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import { fetchCollection } from '../api.js';
 
-export default function CollectionView({ resource, title, columns, emptyMessage }) {
+export default function CollectionView({ resource, endpoint, title, columns, emptyMessage }) {
   const [items, setItems] = useState([]);
   const [error, setError] = useState('');
 
   useEffect(() => {
     let active = true;
-    fetchCollection(resource)
+    fetchCollection(resource, endpoint)
       .then((data) => active && setItems(data))
       .catch((requestError) => active && setError(requestError.message));
     return () => { active = false; };
-  }, [resource]);
+  }, [resource, endpoint]);
 
   return (
     <section className="content-section">

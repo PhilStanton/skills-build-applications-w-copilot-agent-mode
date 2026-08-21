@@ -5,8 +5,8 @@ const apiBaseUrl = codespaceName
 
 export const apiUrl = (resource) => `${apiBaseUrl}/${resource}/`;
 
-export async function fetchCollection(resource) {
-  const response = await fetch(apiUrl(resource));
+export async function fetchCollection(resource, endpoint = apiUrl(resource)) {
+  const response = await fetch(endpoint);
   if (!response.ok) throw new Error(`Unable to load ${resource} (${response.status})`);
   const payload = await response.json();
   const collection = payload?.data || payload;
