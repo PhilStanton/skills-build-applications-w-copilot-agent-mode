@@ -1,0 +1,25 @@
+:root { --ink: #17221f; --muted: #68736d; --line: #d8d4c9; --lime: #c9e86b; --paper: #f4f0e8; --white: #fffdf8; }
+.app-shell { min-height: 100vh; background: radial-gradient(circle at 85% 0%, #dce8c2 0, transparent 28rem), var(--paper); }
+.app-header { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 1.25rem clamp(1.25rem, 5vw, 5rem); border-bottom: 1px solid var(--line); }
+.brand { font-weight: 700; letter-spacing: .08em; text-decoration: none; font-size: 1.05rem; }
+.brand span { color: var(--muted); font-weight: 400; }
+nav { display: flex; gap: .4rem; flex-wrap: wrap; justify-content: flex-end; }
+.nav-link { color: var(--muted); padding: .5rem .7rem; text-decoration: none; font-size: .9rem; }
+.nav-link:hover, .nav-link.active { color: var(--ink); background: var(--lime); }
+main { max-width: 1180px; margin: 0 auto; padding: clamp(2rem, 7vw, 6rem) clamp(1.25rem, 5vw, 5rem); }
+.home-section { max-width: 700px; padding: 5rem 0; }
+.eyebrow { color: #788b32; font-family: 'DM Mono', monospace; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1rem; }
+h1 { color: var(--ink); font-size: clamp(2.5rem, 7vw, 5.8rem); letter-spacing: -.06em; line-height: .95; margin: 0 0 1.5rem; }
+.home-copy { color: var(--muted); font-size: 1.2rem; max-width: 32rem; margin-bottom: 2rem; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; border-bottom: 1px solid var(--line); margin-bottom: 1.5rem; }
+.section-heading h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+.record-count { color: var(--muted); font-family: 'DM Mono', monospace; font-size: .75rem; padding-bottom: 1.75rem; }
+.data-table-wrap { background: var(--white); border: 1px solid var(--line); }
+.data-table { --bs-table-bg: transparent; --bs-table-color: var(--ink); }
+.data-table th { color: var(--muted); font-family: 'DM Mono', monospace; font-size: .7rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+.data-table td, .data-table th { padding: 1rem 1.25rem; }
+.data-table tbody tr { border-color: var(--line); }
+.empty-state { background: var(--white); border: 1px dashed var(--line); color: var(--muted); padding: 3rem; text-align: center; }
+footer { border-top: 1px solid var(--line); color: var(--muted); font-family: 'DM Mono', monospace; font-size: .7rem; padding: 1.25rem clamp(1.25rem, 5vw, 5rem); }
+footer a { color: var(--ink); }
+@media (max-width: 760px) { .app-header { align-items: flex-start; flex-direction: column; } nav { justify-content: flex-start; } .section-heading { align-items: flex-start; flex-direction: column; } .record-count { padding-bottom: 1rem; } .home-section { padding: 2rem 0 4rem; } }
